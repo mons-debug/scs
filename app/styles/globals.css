@@ -1,0 +1,85 @@
+/* Add at the beginning of the file */
+:root {
+  --brand-red: #E31E24;
+  --brand-navy: #0A1E3C;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    scroll-padding-top: 80px; /* Adjust based on your header height */
+  }
+  
+  /* Improved touch targets for mobile */
+  a, button, [role="button"] {
+    padding: 0.5rem;
+    margin: -0.5rem;
+  }
+  
+  /* Fix for header padding/margin adjustments on mobile */
+  .mobile-nav-container a,
+  .mobile-nav-container button {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Ensure menu button styling is fixed on mobile */
+  .nav-toggle-button {
+    padding: 0.5rem;
+    margin: 0;
+  }
+}
+
+/* Touch Device Enhancements */
+@media (hover: none) {
+  .hover-only {
+    display: none;
+  }
+  
+  .touch-feedback:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-in-out;
+  }
+}
+
+/* Improved transitions for interactive elements */
+a, button, .transition-element {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s ease-in-out, 
+              background-color 0.3s ease-in-out,
+              opacity 0.3s ease-in-out;
+}
+
+/* Fix for mobile hamburger menu */
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Ensure header has proper spacing */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    height: 80px;
+  }
+}
+
+/* Existing CSS continues below */
+/* ... existing code ... */ 

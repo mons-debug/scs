@@ -101,51 +101,63 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col h-full"
+    className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transform transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl"
   >
-    <div className="relative h-[240px]">
+    <div className="relative h-[240px] overflow-hidden">
       <Image
         src={service.image}
         alt={service.title}
         fill
-        className="object-cover"
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
         priority={index < 3}
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.src = '/placeholder.jpg';
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+      <div className="absolute bottom-0 left-0 p-4">
+        <span className="inline-flex items-center rounded-lg bg-[#E31E24]/80 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm">
+          {service.title}
+        </span>
+      </div>
     </div>
 
     <div className="p-6 flex flex-col flex-grow">
-      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-[#E31E24] transition-colors">
         {service.title}
       </h3>
       <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
         {service.description}
       </p>
       
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="w-full bg-[#E31E24] text-white px-6 py-3 rounded-xl text-base font-medium 
-        hover:bg-[#E31E24]/90 transition-all duration-300 flex items-center justify-center"
+      <motion.a
+        href={`https://wa.me/212666764626?text=Bonjour, je souhaite obtenir un devis pour vos services de désinsectisation pour ${service.title}. Pourriez-vous me contacter? Merci.`}
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.03, y: -2 }}
+        whileTap={{ scale: 0.97 }}
+        className="group relative w-full flex items-center justify-center px-6 py-3.5 rounded-xl overflow-hidden bg-gradient-to-r from-[#E31E24] to-[#C41017] text-white font-semibold shadow-lg border border-white/10"
       >
-        <span>
-          {service.price.includes('Consultation') 
-            ? 'Consultation Gratuite'
-            : `À partir de ${service.price}`
-          }
-        </span>
-        <svg 
-          className="ml-2 w-4 h-4" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </motion.button>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24]/80 via-[#C41017]/70 to-[#E31E24]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-size-200 animate-gradient-x"></div>
+        
+        <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine"></div>
+        
+        <div className="relative z-10 flex items-center justify-center">
+          <div className="flex items-center justify-center bg-white/20 rounded-full p-2 mr-4 shadow-inner backdrop-blur-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.287.129.332.202.045.073.045.419-.1.824z"/>
+            </svg>
+          </div>
+          <div className="flex flex-col items-start">
+            <span className="text-base font-bold tracking-wide">Contactez-nous</span>
+            <span className="text-xs text-white/80">Devis gratuit via WhatsApp</span>
+          </div>
+          <svg className="ml-auto h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </motion.a>
     </div>
   </motion.div>
 );
@@ -198,8 +210,8 @@ const Services = () => {
           <div className="relative -mx-4 px-4">
             <Swiper
               modules={[Pagination, Navigation, A11y]}
-              spaceBetween={16}
-              slidesPerView={1.2}
+              spaceBetween={20}
+              slidesPerView={1.15}
               centeredSlides={true}
               loop={true}
               pagination={{
@@ -214,7 +226,7 @@ const Services = () => {
                 firstSlideMessage: 'Premier service',
                 lastSlideMessage: 'Dernier service',
               }}
-              className="services-swiper !pb-12"
+              className="services-swiper !pb-16"
             >
               {services.map((service, index) => (
                 <SwiperSlide key={service.title} className="pb-4">
@@ -224,7 +236,7 @@ const Services = () => {
             </Swiper>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard key={service.title} service={service} index={index} />
             ))}

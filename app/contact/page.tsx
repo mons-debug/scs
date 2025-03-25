@@ -14,67 +14,67 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         {/* Background Elements */}
-        <div className="absolute inset-0 z-0">
-          {/* Left side pest icons */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Left side pest icons - adjust positioning for better spacing */}
           <div className="absolute left-0 top-0 w-full h-full">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute left-[10%] top-[20%]"
+              className="absolute left-[5%] sm:left-[10%] top-[35%] sm:top-[20%]"
             >
               <Image
                 src="/backicon/iconbackground-01.svg"
                 alt="Pest control icon"
                 width={100}
                 height={100}
-                className="w-24 h-24 md:w-32 md:h-32"
+                className="w-16 h-16 md:w-24 md:h-24 opacity-50 dark:opacity-30"
               />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute left-[20%] bottom-[30%]"
+              className="absolute left-[8%] sm:left-[20%] bottom-[15%] sm:bottom-[30%]"
             >
               <Image
                 src="/backicon/iconbackground-02.svg"
                 alt="Pest control icon"
                 width={100}
                 height={100}
-                className="w-20 h-20 md:w-28 md:h-28"
+                className="w-14 h-14 md:w-20 md:h-20 opacity-50 dark:opacity-30"
               />
             </motion.div>
           </div>
 
-          {/* Right side pest icons */}
+          {/* Right side pest icons - adjust positioning for better spacing */}
           <div className="absolute right-0 top-0 w-full h-full">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute right-[15%] top-[25%]"
+              className="absolute right-[5%] sm:right-[15%] top-[40%] sm:top-[25%]"
             >
               <Image
                 src="/backicon/iconbackground-03.svg"
                 alt="Pest control icon"
                 width={100}
                 height={100}
-                className="w-24 h-24 md:w-32 md:h-32"
+                className="w-16 h-16 md:w-24 md:h-24 opacity-50 dark:opacity-30"
               />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute right-[25%] bottom-[35%]"
+              className="absolute right-[12%] sm:right-[25%] bottom-[20%] sm:bottom-[35%]"
             >
               <Image
                 src="/backicon/iconbackground-04.svg"
                 alt="Pest control icon"
                 width={100}
                 height={100}
-                className="w-20 h-20 md:w-28 md:h-28"
+                className="w-14 h-14 md:w-20 md:h-20 opacity-50 dark:opacity-30"
               />
             </motion.div>
           </div>
@@ -144,14 +144,14 @@ export default function ContactPage() {
             
             {/* WhatsApp Card */}
             <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center transform transition-transform hover:-translate-y-2 hover:shadow-xl">
-              <div className="w-16 h-16 bg-[#25D366]/10 dark:bg-[#25D366]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-[#25D366]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-[#E31E24]/10 dark:bg-[#E31E24]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-[#E31E24]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.287.129.332.202.045.073.045.419-.1.824z"/>
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-[#0A1E3C] dark:text-white mb-3">WhatsApp</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">Pour une réponse rapide, contactez-nous via WhatsApp</p>
-              <a href="https://wa.me/212666764626" className="text-[#25D366] font-semibold text-lg hover:underline">Chat sur WhatsApp</a>
+              <a href="https://wa.me/212666764626" className="text-[#E31E24] font-semibold text-lg hover:underline">Chat sur WhatsApp</a>
             </div>
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function ContactPage() {
                 </a>
                 <a 
                   href="https://wa.me/212666764626" 
-                  className="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#20b755] transition-colors shadow-lg w-full sm:w-auto"
+                  className="inline-flex items-center justify-center bg-[#E31E24] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#c91b1f] transition-colors shadow-lg w-full sm:w-auto"
                 >
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.287.129.332.202.045.073.045.419-.1.824z"/>

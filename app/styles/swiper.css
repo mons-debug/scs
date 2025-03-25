@@ -4,6 +4,7 @@
   margin: 0 -16px;
   padding: 0 16px;
   touch-action: pan-y;
+  perspective: 1000px;
 }
 
 .services-swiper .swiper-wrapper {
@@ -15,26 +16,30 @@
 }
 
 .services-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: #E31E24;
-  opacity: 0.3;
+  opacity: 0.5;
   transition: all 0.3s ease;
 }
 
 .services-swiper .swiper-pagination-bullet-active {
   opacity: 1;
-  width: 24px;
-  border-radius: 4px;
+  width: 14px;
+  height: 14px;
+  background: #E31E24;
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(227, 30, 36, 0.6);
 }
 
 .services-swiper .swiper-slide {
-  transition: transform 0.3s ease;
+  transition: transform 300ms ease;
   height: auto;
   touch-action: pan-y;
 }
 
 .services-swiper .swiper-slide-active {
+  z-index: 2;
   transform: scale(1.02);
 }
 

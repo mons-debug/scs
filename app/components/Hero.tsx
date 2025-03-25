@@ -316,52 +316,24 @@ const Hero = () => {
           >
             {[
               {
-                title: 'Dératisation',
-                icon: (
-                  <Image 
-                    src="/svgiconhome-01.webp"
-                    alt="Dératisation"
-                    width={64}
-                    height={64}
-                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
-                  />
-                )
-              },
-              {
-                title: 'Contrôle des Insectes',
-                icon: (
-                  <Image 
-                    src="/svgiconhome-02.webp"
-                    alt="Contrôle des Insectes"
-                    width={64}
-                    height={64}
-                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
-                  />
-                )
+                title: 'Contrôle des Rongeurs',
+                iconLight: "/svgiconhome-01.webp",
+                iconDark: "/svgiconhomedm-01.webp"
               },
               {
                 title: 'Désinfection',
-                icon: (
-                  <Image 
-                    src="/svgiconhome-03.webp"
-                    alt="Désinfection"
-                    width={64}
-                    height={64}
-                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
-                  />
-                )
+                iconLight: "/svgiconhome-02.webp",
+                iconDark: "/svgiconhomedm-02.webp"
               },
               {
-                title: 'Dératisation',
-                icon: (
-                  <Image 
-                    src="/svgiconhome-04.webp"
-                    alt="Dératisation"
-                    width={64}
-                    height={64}
-                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
-                  />
-                )
+                title: 'Contrôle des Insectes',
+                iconLight: "/svgiconhome-03.webp",
+                iconDark: "/svgiconhomedm-03.webp"
+              },
+              {
+                title: 'Contrôle des Serpents',
+                iconLight: "/svgiconhome-04.webp",
+                iconDark: "/svgiconhomedm-04.webp"
               }
             ].map((service, index) => (
               <motion.div
@@ -372,7 +344,13 @@ const Hero = () => {
                 className="bg-white dark:bg-gray-800 rounded-xl p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#E31E24]/20 dark:hover:border-[#E31E24]/20 transform hover:-translate-y-1 group"
               >
                 <div className="text-[#0A1E3C] dark:text-white mb-4">
-                  {service.icon}
+                  <Image 
+                    src={theme === 'dark' ? service.iconDark : service.iconLight}
+                    alt={service.title}
+                    width={64}
+                    height={64}
+                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
+                  />
                 </div>
                 <h3 className="text-[#0A1E3C] dark:text-white text-base font-semibold">{service.title}</h3>
               </motion.div>
