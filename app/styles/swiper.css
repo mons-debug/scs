@@ -1,0 +1,82 @@
+/* Custom Swiper Styles */
+.services-swiper {
+  padding-bottom: 40px !important;
+  margin: 0 -16px;
+  padding: 0 16px;
+  touch-action: pan-y;
+}
+
+.services-swiper .swiper-wrapper {
+  transition-timing-function: ease-out;
+}
+
+.services-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.services-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #E31E24;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.services-swiper .swiper-slide {
+  transition: transform 0.3s ease;
+  height: auto;
+  touch-action: pan-y;
+}
+
+.services-swiper .swiper-slide-active {
+  transform: scale(1.02);
+}
+
+/* Dark Mode Styles */
+html.dark .services-swiper .swiper-pagination-bullet {
+  background: #E31E24;
+  opacity: 0.4;
+}
+
+html.dark .services-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+html.dark .services-swiper .swiper-button-next,
+html.dark .services-swiper .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+html.dark .services-swiper .swiper-button-next:hover,
+html.dark .services-swiper .swiper-button-prev:hover {
+  color: #E31E24;
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+  .services-swiper {
+    overflow: visible;
+  }
+  
+  .services-swiper .swiper-slide {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+  
+  .services-swiper .swiper-slide-active {
+    opacity: 1;
+  }
+
+  /* Fix for iOS Safari */
+  .services-swiper, 
+  .services-swiper .swiper-wrapper,
+  .services-swiper .swiper-slide {
+    -webkit-overflow-scrolling: touch;
+  }
+} 
