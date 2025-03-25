@@ -316,57 +316,51 @@ const Hero = () => {
           >
             {[
               {
-                title: 'Contrôle des Rongeurs',
+                title: 'Dératisation',
                 icon: (
-                  <svg className="w-12 h-12 mx-auto text-[#E31E24] dark:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 4C18.4477 4 18 4.44772 18 5C18 5.55228 18.4477 6 19 6C19.5523 6 20 5.55228 20 5C20 4.44772 19.5523 4 19 4Z" fill="currentColor"/>
-                    <path d="M5 10C4.44772 10 4 10.4477 4 11C4 11.5523 4.44772 12 5 12C5.55228 12 6 11.5523 6 11C6 10.4477 5.55228 10 5 10Z" fill="currentColor"/>
-                    <path d="M20.1716 5.34315L16.8284 8.68629C15.2663 10.2484 15.2663 12.7516 16.8284 14.3137L18.7279 16.2132C19.1184 16.6037 19.1184 17.2369 18.7279 17.6274L17.2426 19.1127C16.8521 19.5032 16.219 19.5032 15.8284 19.1127L13.9289 17.2132C12.3669 15.6511 9.86362 15.6511 8.30153 17.2132L4.75736 20.7574C4.36684 21.1479 3.73367 21.1479 3.34315 20.7574L3.22183 20.636C2.8313 20.2455 2.8313 19.6124 3.22183 19.2218L6.40408 16.0396C7.96617 14.4775 7.96617 11.9743 6.40408 10.4122L4.92893 8.93701C4.53841 8.54648 4.53841 7.91332 4.92893 7.52279L6.34315 6.10858C6.73367 5.71805 7.36684 5.71805 7.75736 6.10858L9.51471 7.86592C11.0768 9.42801 13.58 9.42801 15.1421 7.86592L19.0503 3.95771C19.4408 3.56719 20.074 3.56719 20.4645 3.95771L20.5858 4.07903C20.9763 4.46955 20.9763 5.10272 20.5858 5.49324L20.1716 5.34315Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M5 18L8 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                )
-              },
-              {
-                title: 'Désinfection',
-                icon: (
-                  <svg className="w-12 h-12 mx-auto text-[#0A1E3C] dark:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 14L16 18C16 19.1046 15.1046 20 14 20L10 20C8.89543 20 8 19.1046 8 18L8 14" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M5 11L12 4L19 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M19 14H5M5 14L5 11M19 14L19 11" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M10 20L10 14.5C10 14.2239 10.2239 14 10.5 14L13.5 14C13.7761 14 14 14.2239 14 14.5L14 20" stroke="currentColor" strokeWidth="1.5"/>
-                  </svg>
+                  <Image 
+                    src="/svgiconhome-01.webp"
+                    alt="Dératisation"
+                    width={64}
+                    height={64}
+                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
+                  />
                 )
               },
               {
                 title: 'Contrôle des Insectes',
                 icon: (
-                  <svg className="w-12 h-12 mx-auto text-[#0A1E3C] dark:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 11V12.5C8 13.3284 8.67157 14 9.5 14C10.3284 14 11 13.3284 11 12.5V11" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M13 11V12.5C13 13.3284 13.6716 14 14.5 14C15.3284 14 16 13.3284 16 12.5V11" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="9.5" cy="9.5" r="1.5" fill="currentColor"/>
-                    <circle cx="14.5" cy="9.5" r="1.5" fill="currentColor"/>
-                    <path d="M5 3L9 7M19 3L15 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M12 7L12 14" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M3 12H7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M17 12H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M8 16L16 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M9 19L15 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M12 19L12 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
+                  <Image 
+                    src="/svgiconhome-02.webp"
+                    alt="Contrôle des Insectes"
+                    width={64}
+                    height={64}
+                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
+                  />
                 )
               },
               {
-                title: 'Contrôle des Serpents',
+                title: 'Désinfection',
                 icon: (
-                  <svg className="w-12 h-12 mx-auto text-[#0A1E3C] dark:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 4C15.8954 4 15 4.89543 15 6C15 7.10457 15.8954 8 17 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M7 14C5.89543 14 5 14.8954 5 16C5 17.1046 5.89543 18 7 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M12.268 3.74876C12.7653 3.36861 13.4561 3.47782 13.8363 3.97512C14.2164 4.47243 14.1072 5.16321 13.6099 5.54335L8.70611 9.21593C8.20881 9.59608 7.51803 9.48686 7.13789 8.98956C6.75774 8.49226 6.86695 7.80148 7.36426 7.42133L12.268 3.74876Z" fill="currentColor"/>
-                    <path d="M21 16C21 16 16 12.5 12 12.5C8 12.5 3 16 3 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M3 12C3 12 8 15.5 12 15.5C16 15.5 21 12 21 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M16.268 18.7488C16.7653 18.3686 17.4561 18.4778 17.8363 18.9751C18.2164 19.4724 18.1072 20.1632 17.6099 20.5434L12.7061 20.5434C12.2088 20.9235 11.518 20.8143 11.1379 20.317C10.7577 19.8197 10.867 19.1289 11.3643 18.7488L16.268 18.7488Z" fill="currentColor"/>
-                  </svg>
+                  <Image 
+                    src="/svgiconhome-03.webp"
+                    alt="Désinfection"
+                    width={64}
+                    height={64}
+                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
+                  />
+                )
+              },
+              {
+                title: 'Dératisation',
+                icon: (
+                  <Image 
+                    src="/svgiconhome-04.webp"
+                    alt="Dératisation"
+                    width={64}
+                    height={64}
+                    className="mx-auto transition-transform duration-300 group-hover:scale-110"
+                  />
                 )
               }
             ].map((service, index) => (
@@ -375,9 +369,9 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#E31E24]/20 dark:hover:border-[#E31E24]/20 transform hover:-translate-y-1"
+                className="bg-white dark:bg-gray-800 rounded-xl p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#E31E24]/20 dark:hover:border-[#E31E24]/20 transform hover:-translate-y-1 group"
               >
-                <div className="text-[#0A1E3C] dark:text-white mb-4 transform transition-transform group-hover:scale-110">
+                <div className="text-[#0A1E3C] dark:text-white mb-4">
                   {service.icon}
                 </div>
                 <h3 className="text-[#0A1E3C] dark:text-white text-base font-semibold">{service.title}</h3>
