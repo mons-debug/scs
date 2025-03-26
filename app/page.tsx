@@ -8,14 +8,16 @@ import FloatingActionButton from './components/FloatingActionButton';
 
 export default function Home() {
   return (
-    <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <Navbar />
-      <Hero />
-      <Services />
-      <Process />
-      <Contact />
-      <Footer />
-      <FloatingActionButton />
-    </main>
+    <div className="relative w-full overflow-x-hidden">
+      <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 relative w-full">
+        <Navbar />
+        <Hero />
+        <Services />
+        <Process />
+        <Contact />
+        <Footer />
+        <FloatingActionButton />
+      </main>
+    </div>
   );
 }
