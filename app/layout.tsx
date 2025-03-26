@@ -7,8 +7,15 @@ import { ThemeProvider } from './context/ThemeContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Société Cafards Services - Service de Désinfection Professionnel',
-  description: 'Services professionnels de désinfection et contrôle des nuisibles pour particuliers et entreprises.',
+  title: 'Société Cafards Services',
+  description: 'Services professionnels de dératisation et désinsectisation',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
+  themeColor: '#E31E24',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -17,30 +24,34 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="fr" className={`${inter.className} scroll-smooth`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              try {
-                // Check if theme exists in localStorage
-                const theme = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                
-                // Apply dark class if dark theme is stored or user prefers dark mode
-                if (theme === 'dark' || (!theme && prefersDark)) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  
+                  if (theme === 'dark' || (!theme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (err) {
+                  console.log('Failed to apply theme:', err);
                 }
-              } catch (err) {
-                console.error('Failed to apply theme:', err);
-              }
-            })();
-          `
-        }} />
+              })();
+            `
+          }}
+        />
       </head>
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300`}>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
         <ThemeProvider>
           {children}
           <Toaster 
@@ -55,5 +66,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

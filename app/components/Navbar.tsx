@@ -96,7 +96,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 py-10">
+        <div className="flex justify-between items-center h-16 py-4 md:py-5">
           <motion.div 
             className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
@@ -104,11 +104,14 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <Logo 
-                className="w-auto" 
-                height={40}
-                showText={!isScrolled}
-              />
+              <div className="h-12 md:h-14 flex items-center justify-center overflow-visible">
+                <Logo 
+                  className="w-auto h-full" 
+                  width={120}
+                  height={40}
+                  showText={!isScrolled}
+                />
+              </div>
             </Link>
           </motion.div>
 

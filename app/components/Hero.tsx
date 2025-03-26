@@ -316,24 +316,28 @@ const Hero = () => {
           >
             {[
               {
-                title: 'Contrôle des Rongeurs',
-                iconLight: "/svgiconhome-01.webp",
-                iconDark: "/svgiconhomedm-01.webp"
-              },
-              {
-                title: 'Désinfection',
-                iconLight: "/svgiconhome-02.webp",
-                iconDark: "/svgiconhomedm-02.webp"
+                title: 'Contrôle des Serpents',
+                iconLight: '/svgiconhome-01.webp',
+                iconDark: '/svgiconhomedm-01.webp',
+                alt: 'Contrôle des Serpents'
               },
               {
                 title: 'Contrôle des Insectes',
-                iconLight: "/svgiconhome-03.webp",
-                iconDark: "/svgiconhomedm-03.webp"
+                iconLight: '/svgiconhome-02.webp',
+                iconDark: '/svgiconhomedm-02.webp',
+                alt: 'Contrôle des Insectes'
               },
               {
-                title: 'Contrôle des Serpents',
-                iconLight: "/svgiconhome-04.webp",
-                iconDark: "/svgiconhomedm-04.webp"
+                title: 'Désinfection',
+                iconLight: '/svgiconhome-03.webp',
+                iconDark: '/svgiconhomedm-03.webp',
+                alt: 'Désinfection'
+              },
+              {
+                title: 'Contrôle des Rongeurs',
+                iconLight: '/svgiconhome-04.webp',
+                iconDark: '/svgiconhomedm-04.webp',
+                alt: 'Contrôle des Rongeurs'
               }
             ].map((service, index) => (
               <motion.div
@@ -346,10 +350,17 @@ const Hero = () => {
                 <div className="text-[#0A1E3C] dark:text-white mb-4">
                   <Image 
                     src={theme === 'dark' ? service.iconDark : service.iconLight}
-                    alt={service.title}
+                    alt={service.alt}
                     width={64}
                     height={64}
                     className="mx-auto transition-transform duration-300 group-hover:scale-110"
+                    priority
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      console.error(`Failed to load image: ${target.src}`);
+                      // Try loading the opposite theme image as fallback
+                      target.src = theme === 'dark' ? service.iconLight : service.iconDark;
+                    }}
                   />
                 </div>
                 <h3 className="text-[#0A1E3C] dark:text-white text-base font-semibold">{service.title}</h3>

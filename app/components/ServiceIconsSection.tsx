@@ -52,25 +52,20 @@ const ServiceIcon = ({ title, iconNumber, className = "" }: ServiceIconProps) =>
       className={`flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md ${className}`}
     >
       <div className="relative w-24 h-24 mb-4">
-        {isDarkMode ? (
-          <Image 
-            src={`/svgiconhomedm-${iconNumber}.webp`}
-            alt={title}
-            fill
-            className="object-contain"
-          />
-        ) : (
-          <Image 
-            src={`/svgiconhome-${iconNumber}.webp`}
-            alt={title}
-            fill
-            className="object-contain"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = '/placeholder.jpg';
-            }}
-          />
-        )}
+        <Image 
+          src={isDarkMode ? `/svgiconhomedm-${iconNumber}.webp` : `/svgiconhome-${iconNumber}.webp`}
+          alt={title}
+          fill
+          className="object-contain"
+          priority
+          sizes="(max-width: 768px) 96px, 96px"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            console.error(`Failed to load image: ${target.src}`);
+            // Try loading the opposite theme image as fallback
+            target.src = isDarkMode ? `/svgiconhome-${iconNumber}.webp` : `/svgiconhomedm-${iconNumber}.webp`;
+          }}
+        />
       </div>
       <h3 className="text-center text-gray-900 dark:text-white font-semibold text-lg">{title}</h3>
     </motion.div>
