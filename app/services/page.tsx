@@ -196,14 +196,6 @@ const ServicesPage = () => {
   
   return (
     <>
-      {/* Skip to content link for accessibility */}
-      <a 
-        href="#services"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#E31E24] text-white px-4 py-2 rounded-md z-[9999] focus:outline-none focus:ring-2 focus:ring-white"
-      >
-        Passer au contenu principal
-      </a>
-      
       <Navbar />
       <main className="min-h-screen">
         {/* Apply custom styles */}
