@@ -141,39 +141,39 @@ const services = [
 // Home services from Services.tsx
 const homeServices = [
   {
+    id: 1,
     title: 'Villas & Mini-villas',
     description: 'Protégez votre maison contre l\'invasion des cafards avec un traitement professionnel longue durée.',
-    price: '1200DH',
     image: '/images/home/Flux_Dev_enerate_a_highquality_realistic_image_of_a_luxurious__3.jpeg'
   },
   {
+    id: 2,
     title: 'Écoles & Instituts',
     description: 'Assurez un environnement sain et protégé pour les élèves et enseignants.',
-    price: '1400DH',
     image: '/images/home/Flux_Dev_Generate_a_realistic_image_of_a_modern_school_buildin_1.jpeg'
   },
   {
+    id: 3,
     title: 'Restaurants & Snacks',
     description: 'Respectez les normes sanitaires et protégez votre établissement contre les infestations !',
-    price: '900DH',
     image: '/images/home/Flux_Dev_Create_a_highquality_realistic_image_of_a_modern_rest_0.jpeg'
   },
   {
+    id: 4,
     title: 'Entreprises & Bureaux',
     description: 'Offrez un espace de travail sans nuisibles pour vos employés !',
-    price: 'Consultation et devis gratuits',
     image: '/images/home/Flux_Dev_Generate_a_realistic_image_of_a_sleek_modern_office_b_0.jpeg'
   },
   {
+    id: 5,
     title: 'Appartements & Résidences',
     description: 'Dites adieu aux cafards avec une solution efficace et durable !',
-    price: '900DH',
     image: '/images/home/Flux_Dev_Create_a_highquality_realistic_image_of_a_wellmaintai_1.jpeg'
   },
   {
+    id: 6,
     title: 'Usines & Entrepôts',
     description: 'Protégez vos stocks et vos locaux contre les nuisibles!',
-    price: '1200DH',
     image: '/images/home/Flux_Dev_Generate_a_realistic_image_of_a_large_modern_industri_1.jpeg'
   }
 ];
@@ -196,6 +196,14 @@ const ServicesPage = () => {
   
   return (
     <>
+      {/* Skip to content link for accessibility */}
+      <a 
+        href="#services"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#E31E24] text-white px-4 py-2 rounded-md z-[9999] focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        Passer au contenu principal
+      </a>
+      
       <Navbar />
       <main className="min-h-screen">
         {/* Apply custom styles */}
@@ -210,16 +218,16 @@ const ServicesPage = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-transparent dark:from-black/70 dark:via-black/60 dark:to-transparent z-10" />
             <Image
               src="/divh.jpg"
-              alt="Nos Services de Désinsectisation"
+              alt="Services professionnels de désinsectisation - Équipe en action"
               fill
               className="object-cover object-center brightness-105 contrast-105 saturate-110 scale-105 transform transition-transform duration-15000 ease-in-out animate-slow-zoom"
               priority
               sizes="100vw"
-              quality={100}
+              quality={85}
             />
             
             {/* Background Patterns */}
-            <div className="absolute inset-0 z-20 opacity-50">
+            <div className="absolute inset-0 z-20 opacity-50" aria-hidden="true">
               <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
@@ -231,8 +239,8 @@ const ServicesPage = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-[#E31E24]/20 blur-3xl"></div>
-            <div className="absolute bottom-1/4 left-1/4 w-40 h-40 rounded-full bg-[#0A1E3C]/20 blur-3xl"></div>
+            <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-[#E31E24]/20 blur-3xl" aria-hidden="true"></div>
+            <div className="absolute bottom-1/4 left-1/4 w-40 h-40 rounded-full bg-[#0A1E3C]/20 blur-3xl" aria-hidden="true"></div>
           </div>
           
           {/* Content Container */}
@@ -275,9 +283,19 @@ const ServicesPage = () => {
                 transition={{ delay: 0.8, duration: 0.5 }}
                 className="mt-8 md:mt-10"
               >
-                <a href="#services" className="inline-flex items-center justify-center px-8 py-3 bg-white dark:bg-gray-800 text-[#0A1E3C] dark:text-white rounded-full font-medium hover:bg-[#E31E24] hover:text-white dark:hover:bg-[#E31E24] transition-all duration-300 shadow-lg group">
+                <a 
+                  href="#services" 
+                  className="inline-flex items-center justify-center px-8 py-3 bg-white dark:bg-gray-800 text-[#0A1E3C] dark:text-white rounded-full font-medium hover:bg-[#E31E24] hover:text-white dark:hover:bg-[#E31E24] transition-all duration-300 shadow-lg group focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#E31E24]"
+                  aria-label="Découvrir nos services - Aller à la section services"
+                >
                   Découvrir nos services
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg 
+                    className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
@@ -291,6 +309,7 @@ const ServicesPage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+            aria-hidden="true"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
@@ -643,11 +662,11 @@ const ServicesPage = () => {
                 </div>
                 
                 <h3 className="text-xl font-bold text-[#0A1E3C] dark:text-white mb-3">
-                  Tarifs Transparents
+                  Service Professionnel
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Aucune surprise sur votre facture. Nous proposons des devis détaillés et 
-                  transparents avant de commencer tout travail, sans frais cachés.
+                  Notre engagement envers l'excellence se traduit par un service transparent et de qualité supérieure. 
+                  Nous vous proposons des solutions adaptées à vos besoins sans compromis sur la qualité.
                 </p>
                 
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -1143,10 +1162,7 @@ const ClientSolutionsTabs = () => {
                           transition={{ delay: 0.3, duration: 0.5 }}
                           className="bg-[#E31E24] text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold shadow-lg text-sm sm:text-base"
                         >
-                          {homeServices[activeTab].price.includes('Consultation') 
-                            ? 'Gratuit'
-                            : homeServices[activeTab].price
-                          }
+                          Service Professionnel
                         </motion.div>
                       </div>
                     </div>
@@ -1202,7 +1218,7 @@ const ClientSolutionsTabs = () => {
                         
                         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                           <motion.a
-                            href={`https://wa.me/212666764626?text=Bonjour, je suis intéressé(e) par votre service de désinsectisation pour ${homeServices[activeTab].title}. ${homeServices[activeTab].price.includes('Consultation') ? 'Pouvez-vous me contacter pour une consultation gratuite?' : `Le tarif affiché est ${homeServices[activeTab].price}.`} Merci.`}
+                            href={`https://wa.me/212666764626?text=Bonjour, je suis intéressé(e) par votre service: ${homeServices[activeTab].title}. Pouvez-vous me fournir plus d'informations et un devis? Merci.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}

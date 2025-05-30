@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cafardservices.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin areas (if any in future)
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/ 

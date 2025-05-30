@@ -104,11 +104,11 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <div className="h-12 md:h-14 flex items-center justify-center overflow-visible">
+              <div className="h-12 w-auto flex items-center justify-center">
                 <Logo 
-                  className="w-auto h-full" 
-                  width={120}
-                  height={40}
+                  className="h-full w-auto" 
+                  width={200}
+                  height={68}
                   showText={!isScrolled}
                 />
               </div>

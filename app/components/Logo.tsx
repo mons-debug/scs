@@ -31,7 +31,7 @@ const Logo = ({
             duration: 0.3,
             ease: "easeOut"
           }}
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center w-full h-full"
         >
           <Image
             src={theme === 'dark' ? '/logos/logo-darkmode.png' : '/logos/logo.png'}
@@ -41,6 +41,7 @@ const Logo = ({
             className="object-contain max-w-full max-h-full"
             priority
             sizes="(max-width: 768px) 100px, 150px"
+            style={{ objectFit: 'contain', objectPosition: 'center' }}
           />
         </motion.div>
       </AnimatePresence>
