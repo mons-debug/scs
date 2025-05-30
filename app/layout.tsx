@@ -114,7 +114,17 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://wa.me" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        
+        {/* Favicon Links - Explicit and comprehensive */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
+        <link rel="shortcut icon" href="/favicon.ico?v=1" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=1" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=1" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png?v=1" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
