@@ -81,7 +81,7 @@ const Services = () => {
           className="text-center mb-12"
         >
           <span className="inline-block px-4 py-1 mb-4 bg-[#E31E24]/10 dark:bg-[#E31E24]/20 text-[#E31E24] text-sm font-medium rounded-full">
-            Nos Services
+            Nos Solutions Par Type de Client
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0A1E3C] dark:text-white mb-4">
             Solutions <span className="text-[#E31E24]">Professionnelles</span>
