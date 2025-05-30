@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     siteName: 'Société Cafards Services',
     images: [
       {
-        url: '/logos/logo.png',
-        width: 1200,
-        height: 630,
+        url: '/favicon-512x512.png',
+        width: 512,
+        height: 512,
         alt: 'Société Cafards Services Logo',
       },
     ],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Société Cafards Services - Services Anti-Nuisibles Professionnels',
     description: 'Solutions professionnelles contre tous types de nuisibles. Dératisation, désinsectisation et désinfection au Maroc.',
-    images: ['/logos/logo.png'],
+    images: ['/favicon-512x512.png'],
   },
   viewport: {
     width: 'device-width',
@@ -68,16 +68,16 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/logos/logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/logos/logo.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/logos/logo.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/logos/logo.png',
+        url: '/apple-touch-icon.png',
       },
     ],
   },
@@ -113,6 +113,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -120,7 +124,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Société Cafards Services",
-              "image": "https://cafardservices.com/logos/logo.png",
+              "image": "https://cafardservices.com/favicon-512x512.png",
               "description": "Services professionnels de dératisation, désinsectisation et désinfection au Maroc",
               "address": {
                 "@type": "PostalAddress",
