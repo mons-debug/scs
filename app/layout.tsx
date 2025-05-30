@@ -68,17 +68,17 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' },
     ],
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/apple-touch-icon.png',
+        url: '/apple-touch-icon.png?v=2',
       },
     ],
   },
@@ -103,6 +103,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.className} scroll-smooth`} suppressHydrationWarning>
       <head>
+        {/* Primary favicon for maximum compatibility */}
+        <link rel="icon" href="/favicon.ico?v=2" />
+        
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,14 +119,14 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://wa.me" />
         
         {/* Favicon Links - Explicit and comprehensive */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
-        <link rel="shortcut icon" href="/favicon.ico?v=1" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=1" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=1" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1" />
-        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png?v=1" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png?v=2" />
         
         <script
           type="application/ld+json"
